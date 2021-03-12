@@ -428,6 +428,7 @@ public class FabricTPA implements ModInitializer {
             @Override
             public void run() {
                 if (counter[0] == 0) {
+                    tr.tFrom = tr.tFrom.server.getPlayerManager().getPlayer(tr.tFrom.getUuid());
                     tr.tFrom.teleport(tr.tTo.getServerWorld(), tr.tTo.getX(), tr.tTo.getY(), tr.tTo.getZ(), tr.tTo.yaw, tr.tTo.pitch);
                     if (!tpaDisableBossBar && finalStandStillBar != null) {
                         finalStandStillBar.removePlayer(tr.tFrom);
